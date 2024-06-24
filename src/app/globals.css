@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active-class {
+  color: #FF602E;
+  border-bottom: 2px solid;
+  border-color: #FF602E;
+}
+
+.anim {
+  transition-delay: 500ms;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+
+
+/* About us  */
+
+/* Homesection */
+.animated-home-aboutus {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: ease-left-animation 2s 2s forwards;
+}
+
+@keyframes ease-left-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animated-aboutus-schedule {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: ease-left-animation 2s 0.8s forwards;
+}
+
+@keyframes ease-left-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Projectup section */
+
+.animated-div {
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: ease-in-out-animation 1s 0.8s forwards;
+}
+
+.animated-design {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: ease-in-out-animation 1s 0.2s forwards;
+}
+
+.animated-tab {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: ease-open-animation 1s 1s forwards;
+}
+
+.animated-pen {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: ease-open-animation 1s 1.5s forwards;
+}
+
+
+@keyframes ease-in-out-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ease-open-animation {
+  0% {
+    opacity: 0;
+    scale: 4px;
+  }
+
+  50% {
+    opacity: 100;
+    scale: 8px;
+  }
+
+  100% {
+    opacity: 100;
+    scale: 20px;
+  }
+}
+
+/* Hover overlay for images of landing page */
+@keyframes rotateIn {
+  0% {
+    transform: rotate(-70deg);
+    background-color: transparent;
+  }
+  100% {
+    transform: rotate(0deg);
+    background-color: rgba(255, 255, 255, 0.658);
+  }
+}
+
+.hover-overlay::before {
+  content: '';
+  position: absolute;
+  top: auto;
+  left: auto;
+  width: 500px;
+  height: 282px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: transparent;
+  transform-origin: bottom ;
+  transition: background-color 1s ease;
+  
+}
+@media (max-width: 640px) {
+  .hover-overlay::before {
+    width: 400px;
+    height: 225px;
+  }
+}
+
+.hover-overlay:hover::before {
+  animation: rotateIn 0.8s forwards;
+}
+
+
+/* Hover overlay for Feature cards on home page */
+@keyframes rotateInf {
+  0% {
+    transform: rotate(-70deg);
+    background-color: transparent;
+  }
+  100% {
+    transform: rotate(0deg);
+    background-color: rgba(255, 255, 255, 0.658);
+  }
+}
+
+.hover-overlayf::before {
+  content: '';
+  position: absolute;
+  top: auto;
+  left: auto;
+  width: 20rem;
+  height: 20rem;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: transparent;
+  transform-origin: bottom ;
+  transition: background-color 1s ease;
+  
+}
+@media (max-width: 1024px) {
+  .hover-overlayf::before {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+@media (max-width: 768px) {
+  .hover-overlayf::before {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+@media (max-width: 640px) {
+  .hover-overlayf::before {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+.hover-overlayf:hover::before {
+  animation: rotateInf 0.8s forwards;
+}
